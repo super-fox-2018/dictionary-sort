@@ -2,16 +2,19 @@ const readline = require('readline');
 // your code here to initialize the program and take user input
 
 function dictionarySort(arr) {
-  for (var i = 0; i < arr.length; i++) {
-    for (var j = i+1; j < arr.length; j++) {
-      if (arr[i].toLowerCase() > arr[j].toLowerCase()) {
-        var temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
+  var newArr = arr.slice();
+
+  for (var i = 0; i < newArr.length; i++) {
+    for (var j = i+1; j < newArr.length; j++) {
+      if (newArr[i].toLowerCase() > newArr[j].toLowerCase()) {
+        var temp = newArr[i];
+        newArr[i] = newArr[j];
+        newArr[j] = temp;
       }
     }
   }
-  return arr.join(',');
+
+  return newArr.join(',');
 }
 
 console.log(dictionarySort(['makan', 'duduk', 'tidur', 'terbang']));
@@ -19,4 +22,4 @@ console.log(dictionarySort(['makan', 'duduk', 'tidur', 'terbang']));
 console.log(dictionarySort(['anggi', 'angga', 'ani', 'adi']));
 // ['adi', 'angga', 'angga', 'ani']
 //
-// module.exports = Dictionary
+module.exports = Dictionary
