@@ -10,7 +10,7 @@ describe('Dictionary is an object', () => {
   it('have [] for word fault', () => {
     assert.deepEqual(dict._word_vault, [])
   })
-  it('add new words into word fault', () => {
+  it('add new words into word vault', () => {
     dict.add_words('word')
     assert.deepEqual(dict._word_vault, ['word'])
   })
